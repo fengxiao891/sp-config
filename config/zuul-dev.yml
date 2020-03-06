@@ -12,18 +12,13 @@ eureka:
 
 zuul:
   retryable: true
-
-#  routes:
-#    item-service: /item-service/**
-#    user-service: /user-service/**
-#    order-service: /order-service/**
     
 ribbon:
   ConnectTimeout: 1000
-  ReadTimeout: 1000
+  ReadTimeout: 2000
   MaxAutoRetriesNextServer: 1
   MaxAutoRetries: 1
-
+  
 hystrix:
   command:
     default:
@@ -31,16 +26,16 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 500
-            
+
 management:
   endpoints:
     web:
       exposure:
         include: hystrix.stream
-           
+        
 zuul:
   sensitive-headers: 
-  
+        
 cloud:
     config:
       override-none: true
