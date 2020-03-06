@@ -40,3 +40,7 @@ management:
            
 zuul:
   sensitive-headers: 
+  
+cloud:
+    config:
+      override-none: true
