@@ -4,6 +4,11 @@ spring:
   application:
     name: item-service
   cloud:
+    inetutils:
+      ignored-interfaces: # 忽略的网卡
+        - VM.*
+      preferred-networks: # 要是用的网卡的网段
+        - 192.168.0
     config:
       override-none: true 
   rabbitmq:
